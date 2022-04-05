@@ -8,4 +8,4 @@ def map_adc_value_to_amps(A2Dvalue, ADC_dict):
   return result
   
 def map_celsius_to_fahrenheit(temperature):
-  return (temperature * 9/5) + 32)
+  return ((temperature * 9/5) + 32)
