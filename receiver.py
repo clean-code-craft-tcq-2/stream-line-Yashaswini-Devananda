@@ -1,3 +1,4 @@
 import sys
 
-print (sys.stdin.read())
+data = sys.stdin.read()
+# print (sys.stdin.read())
