@@ -3,7 +3,7 @@ import time
 import random
 import data_conversion
 
-streaming_data_limit = 1
+streaming_data_limit = 3
 max_temp_value = 110.0
 min_temp_value = 0.0
 max_A2D_value = 4094.0
