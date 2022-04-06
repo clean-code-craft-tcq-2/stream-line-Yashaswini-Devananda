@@ -1,3 +1,3 @@
 import sys
 
-print (sys.stdout.read(current + "," + temperature))
+print (sys.stdin.read())
