@@ -23,8 +23,6 @@ def send_sensor_data(A2D_value, temperature_value):
 for reading in range (streaming_data_limit):
     A2D_value = generate_sensor_readings(min_A2D_value, max_A2D_value)
     temperature = generate_sensor_readings(min_temp_value, max_temp_value)
-    print (A2D_value)
-    print (temperature)
     send_sensor_data(A2D_value, temperature)
     time.sleep(1)
     
