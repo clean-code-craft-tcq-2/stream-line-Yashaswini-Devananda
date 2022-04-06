@@ -38,6 +38,7 @@ jobs:
       - name: Command redirection and pipeline
         run: |
           python sender.py | python receiver.py
+          python sender.py | python streaming_data_test.py
           
 
         
