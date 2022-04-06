@@ -10,9 +10,8 @@ max_A2D_value = 4094.0
 min_A2D_value =  0.0
 ADC_12Bit = {"max_permissible_value" : 4094 , "intercept" : 0 , "max_current_range" : 10}
 
-def map_celsius_to_fahrenheit(temperature):
-    temperature_in_fahrenheit = ((temperature * 9/5) + 32)
-    return str(round(temperature_in_fahrenheit))
+def generate_sensor_readings(min_value, max_value):
+    return(round(random.randint(min_value, max_value)))
     
 def send_sensor_data(A2D_value, temperature_value):
     current = data_conversion.map_adc_value_to_amps(A2D_value, data_conversion.ADC_12Bit)
