@@ -37,13 +37,8 @@ jobs:
           retention-days: 21
       - name: Command redirection and pipeline
         run: |
-          python sender.py | python receiver.py
+          python input_streaming_data_test.py | python receiver.py
           
-      - name: Run receive data
-        run: |
-          coverage run --branch receiver.py
-          coverage html
-          coverage report
-          coverage report
+
         
       
