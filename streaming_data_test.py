@@ -5,6 +5,7 @@ import unittest
 import input_sensor_data
 
 received_data = sys.stdin.read()
+print ("Data_received")
 print (received_data)
 
 # class input_sensor_data_test(unittest.TestCase):
