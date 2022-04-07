@@ -27,7 +27,6 @@ jobs:
       - name: Run and collect coverage
         run: |
           coverage run --branch sender.py
-          coverage run --branch streaming_data_test.py
           coverage html
           coverage report
       - name: Upload coverage
@@ -40,6 +39,18 @@ jobs:
         run: |
           python sender.py | python receiver.py
           python sender.py | python streaming_data_test.py
+          
+      - name: Run and collect coverage
+        run: |
+          coverage run --branch streaming_data_test.py
+          coverage html
+          coverage report
+      - name: Upload coverage
+        uses: actions/upload-artifact@v2
+        with:
+          name: coverage
+          path: ./htmlcov
+          retention-days: 21
           
 
         
