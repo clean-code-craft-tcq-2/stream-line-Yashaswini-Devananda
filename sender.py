@@ -13,7 +13,7 @@ def send_sensor_data(A2D_value, temperature_value):
     sys.stdout.write(current + "," + temperature + "\n")
 #     sys.stdout.write("\n")
     
-for reading in range (streaming_data_limit-1):
+for reading in range (streaming_data_limit):
     send_sensor_data(A2D_readings[reading], temperature_readings[reading])
     time.sleep(1)
     
