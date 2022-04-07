@@ -9,7 +9,7 @@ class input_sensor_data_test(unittest.TestCase):
   
   def test(self):
     for reading in range (sender.streaming_data_limit):
-      self.assertEqual(input_sensor_data.data_sent_to_receiver[reading],sys.stdin.read())
+      self.assertTrue(input_sensor_data.data_sent_to_receiver[reading] == sys.stdin.read())
         
 unittest.main()
   
