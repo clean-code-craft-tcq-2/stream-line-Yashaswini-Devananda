@@ -1,8 +1,15 @@
 import sys
 import time
 import sender
+import unittest
+import input_sensor_data
 
-sys.stdin.read()
 
-
-
+class input_sensor_data_test(unittest.TestCase):
+  
+  def test(self):
+    for reading in range (sender.streaming_data_limit):
+      self.assertEqual(sys.stdin.read(), data_sent_to_receiver[reading])
+        
+unittest.main()
+  
