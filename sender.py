@@ -1,7 +1,11 @@
 import sys
 import time
 import data_conversion
-streaming_data_limit = 5
+import input_sensor_data
+streaming_data_limit = 2
+
+A2D_readings = input_sensor_data.A2D_readings
+temperature_readings = input_sensor_data.temperature_sensor_readings
 
 def send_sensor_data(A2D_value, temperature_value):
     current = data_conversion.map_adc_value_to_amps(A2D_value, data_conversion.ADC_12Bit)
@@ -9,7 +13,7 @@ def send_sensor_data(A2D_value, temperature_value):
     sys.stdout.write(current + "," + temperature + "\n")
 #     sys.stdout.write("\n")
     
-for reading in range (streaming_data_limit):
+for reading in range (streaming_data_limit-1):
     send_sensor_data(A2D_value, temperature)
     time.sleep(1)
     
