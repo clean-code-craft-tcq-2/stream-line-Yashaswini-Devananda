@@ -12,7 +12,7 @@ import unittest
 # # print (sender.start_sending(A2D_readings,temperature_sensor_readings))
 # print (data1)
 print ("----------------")
-A2D_readings = [0,4000]
+A2D_readings = [0,2000]
 temperature_sensor_readings = [0,1]
 # data_received.append(sys.stdin.read())
 data1 = sender.start_sending(A2D_readings,temperature_sensor_readings)
