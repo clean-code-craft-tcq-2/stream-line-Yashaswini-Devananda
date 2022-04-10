@@ -4,7 +4,9 @@ import sender
 import unittest
 import input_sensor_data
 
-sys.stdin.read()
+data_received = []
+
+data_received.append(sys.stdin.read())
 
 # received_data = []
 # received_data.append(sys.stdin.read())
