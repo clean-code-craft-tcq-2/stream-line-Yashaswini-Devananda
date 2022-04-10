@@ -4,6 +4,7 @@ import data_conversion
 import input_sensor_data
 
 def send_data_to_receiver(data):
+    print (data)
 #     sys.stdout.write(data)
     return data
 
@@ -18,7 +19,6 @@ def start_sending(A2D_readings,temperature_readings):
     for reading in range (len(A2D_readings)):
         processed_data = process_sensor_data(A2D_readings[reading], temperature_readings[reading])
         data_sent = send_data_to_receiver(processed_data)
-        print (data_sent)
         data = data + data_sent
     return data
 
