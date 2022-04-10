@@ -18,13 +18,13 @@ def process_sensor_data(A2D_value, temperature_value):
     return data
     
 def start_sending(A2D_readings,temperature_readings):
-    data = []
+    data = ""
     for reading in range (streaming_data_limit):
         data = process_sensor_data(A2D_readings[reading], temperature_readings[reading])
         data_sent = send_data_to_receiver(data)
         time.sleep(0.5)
-#         data.append(data_sent)
-#     return data
+        data = data + data_sent
+    return data
 
 # start_sending(A2D_readings,temperature_readings)
 
