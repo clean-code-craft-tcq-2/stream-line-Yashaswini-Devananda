@@ -4,9 +4,6 @@ import data_conversion
 import input_sensor_data
 streaming_data_limit = 2
 
-# A2D_readings = input_sensor_data.A2D_readings
-# temperature_readings = input_sensor_data.temperature_sensor_readings
-
 def send_data_to_receiver(data):
 #     sys.stdout.write(data)
     return data
@@ -26,9 +23,6 @@ def start_sending(A2D_readings,temperature_readings):
         data = data + data_sent
     return data
 
-# start_sending(A2D_readings,temperature_readings)
-
-    
     
 
 
