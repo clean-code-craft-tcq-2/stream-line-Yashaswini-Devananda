@@ -2,7 +2,6 @@ import sys
 import time
 import data_conversion
 import input_sensor_data
-streaming_data_limit = 2
 
 def send_data_to_receiver(data):
 #     sys.stdout.write(data)
