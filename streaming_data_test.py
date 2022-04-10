@@ -8,6 +8,8 @@ data_received = []
 
 data_received.append(sys.stdin.read())
 
+print (data_received)
+
 # received_data = []
 # received_data.append(sys.stdin.read())
 # print ("Data_received")
