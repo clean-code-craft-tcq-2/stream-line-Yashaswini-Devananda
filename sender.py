@@ -18,7 +18,9 @@ def start_sending(A2D_readings,temperature_readings):
     for reading in range (len(A2D_readings)):
         data = process_sensor_data(A2D_readings[reading], temperature_readings[reading])
         data_sent = send_data_to_receiver(data)
+        print (data_sent)
         data = data + data_sent
+        print (data)
     return data
 
     
