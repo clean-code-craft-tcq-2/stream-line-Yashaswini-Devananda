@@ -8,7 +8,7 @@ streaming_data_limit = 2
 # temperature_readings = input_sensor_data.temperature_sensor_readings
 
 def send_data_to_receiver(data):
-#     sys.stdout.write(data)
+    sys.stdout.write(data)
     return data
 
 def process_sensor_data(A2D_value, temperature_value):
