@@ -22,7 +22,7 @@ SCENARIO("Test the computation of minimum value in the sensor data list")
 {
     GIVEN("Sensor value list set")
     {
-        vector<int> sensorValueList={10,30,20,20,45,25,70,30,70,35};
+        vector<int> sensorValueList={10,30,20,30,45,25,70,30,70,35};
         WHEN("Compute minimum value for the entries of the list")
         {
             int minValue=getMinimumValue(sensorValueList);
@@ -54,7 +54,7 @@ SCENARIO("Test the computation of maximum value in the sensor data list")
 {
     GIVEN("Sensor value list set")
     {
-        vector<int> sensorValueList={10,30,20,20,45,25,70,30,70,35};
+        vector<int> sensorValueList={10,30,20,40,45,25,70,30,70,35};
         WHEN("Compute maximum value for the entries of the list")
         {
             int maxValue=getMaximumValue(sensorValueList);
@@ -86,14 +86,14 @@ SCENARIO("Test functionality to read Sensor data from Console using mock functio
 {
     GIVEN("Mock current and temperature value list")
     {
-        SensorData mockSensorValue;
-        mockSensorValue.currentSensorValueList={100,30,20,20,45,25,70,30,90,35};
-        mockSensorValue.temperatureSensorValueList={60,80,20,30,45,10,70,40,90,50};
+        SensorData mockSensorDataValue;
+        mockSensorDataValue.currentSensorValueList={100,30,20,20,45,25,70,30,90,25};
+        mockSensorDataValue.temperatureSensorValueList={60,80,20,30,45,10,70,40,70,50};
 
         WHEN("Before generating the sensor statics, sensor values need to be read from console")
         {
             mockSensorDataReader dataReaderObject;
-            dataReaderObject.mockSensorData=mockSensorValue;
+            dataReaderObject.mockSensorData=mockSensorDataValue;
             THEN("After creating the mock object, get the sensor data")
             {
                 SensorData obtainedSensorData=dataReaderObject.readSensorDataFromConsole();
@@ -109,8 +109,8 @@ SCENARIO("Test functionality to print Sensor statistics data using mock function
     GIVEN("Mock current and temperature value list")
     {
         SensorData mockSensorValue;
-        mockSensorValue.currentSensorValueList={100,30,20,20,45,25,70,30,90,35};
-        mockSensorValue.temperatureSensorValueList={60,80,20,30,45,10,70,40,90,50};
+        mockSensorValue.currentSensorValueList={100,30,20,20,45,25,80,30,90,35};
+        mockSensorValue.temperatureSensorValueList={60,80,20,30,45,70,70,40,90,50};
         mockSensorDataReader dataReaderObject;
         dataReaderObject.mockSensorData=mockSensorValue;
         WHEN("Before generating the sensor statics, sensor values need to be read from console")
@@ -133,12 +133,12 @@ SCENARIO("Test the Sensor Value Statics obtained")
         SensorData mockSensorValue;
         mockSensorValue.currentSensorValueList={100,30,20,20,45,25,70,30,90,35};
         mockSensorValue.temperatureSensorValueList={60,80,20,30,45,10,70,40,90,50};
-        mockSensorDataReader dataReaderObject;
-        dataReaderObject.mockSensorData=mockSensorValue;
+        mockSensorDataReader mockDataReaderObject;
+        mockDataReaderObject.mockSensorData=mockSensorValue;
         WHEN("Before generating the sensor statics, sensor values need to be read from console and then compute the stats")
         {
             sensorDataPrinter dataPrinterObject;
-            sensorValueStatistic sensorDataStats=getSensorValueStatics(dataReaderObject,dataPrinterObject); 
+            sensorValueStatistic sensorDataStats=getSensorValueStatics(mockDataReaderObject,dataPrinterObject); 
             THEN("After computing the stats, verify them")
             {
                 REQUIRE(sensorDataStats.currentSMAValue==50.000000);  
