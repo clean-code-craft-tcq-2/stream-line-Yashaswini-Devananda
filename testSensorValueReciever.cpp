@@ -97,8 +97,8 @@ SCENARIO("Test functionality to read Sensor data from Console using mock functio
             THEN("After creating the mock object, get the sensor data")
             {
                 SensorData obtainedSensorData=dataReaderObject.readSensorDataFromConsole();
-                REQUIRE(obtainedSensorData.currentSensorValueList==mockSensorValue.currentSensorValueList);
-                REQUIRE(obtainedSensorData.temperatureSensorValueList==mockSensorValue.temperatureSensorValueList);
+                REQUIRE(obtainedSensorData.currentSensorValueList==mockSensorDataValue.currentSensorValueList);
+                REQUIRE(obtainedSensorData.temperatureSensorValueList==mockSensorDataValue.temperatureSensorValueList);
             }
         }
     }
