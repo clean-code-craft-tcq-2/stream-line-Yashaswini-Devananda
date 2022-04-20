@@ -104,7 +104,7 @@ Temperature sensor maximum value=90
 3. Stats will be computed with the obtained list of values.
 
 **UML diagram:**
-
+![UMLdiagram](reciver_uml_diagram.png)
 **Code flow:**
 1. Read the sensor values from sensor output.Sender will display the values on the console.
 2. The values read from the console will be stored in the two list: CurrentsensorValueList and TemperatureSensorValueList.
