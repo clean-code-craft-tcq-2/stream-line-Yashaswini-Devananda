@@ -151,19 +151,3 @@ SCENARIO("Test the Sensor Value Statics obtained")
         }
     }
 }
-
-SCENARIO("Test functionality to read Sensor data from Console")
-{
-    GIVEN("Mock current and temperature value list")
-    {
-        WHEN("Before generating the sensor statics, sensor values need to be read from console")
-        {
-            sensorDataReader dataReaderObject;
-            THEN("Read the sensor data")
-            {
-                SensorData recievedSensorData=dataReaderObject.readSensorDataFromConsole();
-                REQUIRE(recievedSensorData.currentSensorValueList.size()==0);
-            }
-        }
-    }
-}
