@@ -162,7 +162,7 @@ SCENARIO("Test functionality to read Sensor data from Console")
             THEN("Read the sensor data")
             {
                 SensorData recievedSensorData=dataReaderObject.readSensorDataFromConsole();
-                REQUIRE(recievedSensorData.currentSensorValueList.size()==10);
+                REQUIRE(recievedSensorData.currentSensorValueList.size()==0);
             }
         }
     }
