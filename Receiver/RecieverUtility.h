@@ -34,6 +34,8 @@ class sensorDataReader: public sensorDataReaderInterface
        {
             SensorData sensorValue;
     	    string seperator;
+	    std::string sensorValueInput;
+            getline(cin, sensorValueInput);
             for(int i = 0; i < 10; i++)
             {
 	        cin >> sensorValue.currentSensorValueList[i] >> seperator >> sensorValue.temperatureSensorValueList[i];
