@@ -158,6 +158,7 @@ SCENARIO("Test functionality to read Sensor data from Console")
     {
         WHEN("Before generating the sensor statics, sensor values need to be read from console")
         {
+            sensorDataReader dataReaderObject;
             THEN("Read the sensor data")
             {
                 SensorData recievedSensorData=dataReaderObject.readSensorDataFromConsole();
