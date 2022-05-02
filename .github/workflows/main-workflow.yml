@@ -75,6 +75,7 @@ jobs:
         name: coverage
         path: ./*.html
         retention-days: 21
-
-        
+    - name: Command redirection and pipeline
+      run: |
+       python sender.py | ./testchecker
       
